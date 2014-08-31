@@ -1,18 +1,17 @@
 /*The following runs if the screen is <768 px, which I'm calling "mobile"*/
 @media (max-width: 768px) {
-	.jake_title{
+	.js_title{
 		font-size: 30px;
 	}
-	.jake_desc{
+	.js_desc{
 		font-size: 15px;
 	}
-	.jake_content{
-		background:none;
-		width:100%;
-		padding:0px;
-		border:0px;
+	.js_name{
+		display:block;
+		font-size:40px;
 	}
-	body{
-		padding:10px;
+	.js_menuLink{
+		display:block;
+		font-size:25px;
 	}
 }
