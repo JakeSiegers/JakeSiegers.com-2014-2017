@@ -1,0 +1,120 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	font-weight:400;
+	background: url(../img/bg.jpg) center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin:0px;
+	padding:0px;
+}
+.jake_menuLink{
+	color:rgba(255,255,255,0.7);
+	text-decoration: none;
+}
+.jake_menuLink:hover{
+	color:rgba(255,255,255,0.9);
+	text-decoration: none;
+}
+.jake_wrap{
+	width:100%;
+}
+.jake_head{
+	margin-top:30px;
+}
+.jake_content{
+	opacity: 0;
+	color:rgba(255,255,255,0.5);
+	font-size:30px;
+	margin-top:60px;
+	opacity: 0px;
+	padding:10px;
+	border:solid 3px rgba(255,255,255,0.5);
+	width:400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.jake_contentData{
+	display:none;
+}
+.jake_title{
+	font-weight:900;
+	color:rgba(255,255,255,0.5);
+	font-size:60px;
+	text-align:center;
+}
+.jake_desc{
+	color:rgba(255,255,255,0.5);
+	font-size:20px;
+	text-align:center;
+}
+.jake_formField{
+	font-family: 'Roboto', sans-serif;
+	font-weight:100;
+	color:white;
+	font-size:30px;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	padding:5px;
+	border:solid 3px rgba(255,255,255,0.5);
+	width:100%;
+}
+.jake_input{
+	height:50px;
+}
+.jake_textArea{
+	height:300px;
+}
+.jake_button_wrap{
+	height:50px;
+	padding:0px;
+	border:0px;
+}
+.jake_button{
+	color:black;
+	background:rgba(255,255,255,0.5);
+	font-size:30px;
+	width:100%;
+	height:50px;
+	border:0;
+}
+.jake_button:hover{
+	color:rgba(0,0,0,0.5);
+	background:rgba(255,255,255,0.8);
+	cursor: pointer;
+}
+.jake_blur{
+	background: url(../img/bg-blur.jpg) center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.jake_white{
+	background:rgba(255,255,255,0.5);
+	width:100%;
+	height:100%;
+}
+.jake_moveAround{
+	-webkit-animation: move 1s infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease-in-out;
+	animation: move 1s infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes move{
+ 	from {margin-top:10px;}
+	to {margin-top:600px;}
+}
+@-webkit-keyframes move {
+	from {margin-top:10px;}
+	to {margin-top:600px;}
+}
+
+
