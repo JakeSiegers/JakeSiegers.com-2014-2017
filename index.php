@@ -21,7 +21,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
-					<div class="js_content js_blur" id="js_content">
+					<div class="js_content_wrap js_blur" id="js_content_wrap">
+						<div class="js_content js_white" id="js_content">
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -38,9 +41,10 @@
 				<div class="form-group" wrapping="message">
 					<textarea class="form-control input-lg js_formField js_blur" placeholder="Message" name="message" rows="10"></textarea>
 				</div>
-				<div class="js_formField js_button_wrap js_blur"><button onclick="js_sendMessage(); return false;" class="btn btn-primary btn-lg btn-block js_button"><span class="js_emailLoader"></span> Send <span class="js_emailErrorMessage"></span><span class="js_emailHappyMessage"></span></button></div>
+				<button onclick="js_sendMessage(); return false;" class="btn btn-primary btn-lg btn-block js_button"><span class="js_emailLoader"></span> Send </button>
 			</form>
-
+			<div class="js_emailErrorMessage"></div>
+			<div class="js_emailHappyMessage"></div>
 		</div>
 
 		<div class="js_contentData" id="js_workBox">

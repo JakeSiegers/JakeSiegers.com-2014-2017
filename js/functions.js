@@ -16,7 +16,7 @@ $(function(){
 
 function js_adjustHeader(){
 	var newMargin = 30;
-	var totalHeight = $('#js_content').height()+$('#js_head').height();
+	var totalHeight = $('#js_content_wrap').height()+$('#js_head').height();
 	if((totalHeight/2) > screenHeight/2){
 		newMargin = 20;
 	}else{
@@ -44,7 +44,7 @@ function js_changeBox(box){
 		return false;
 	}
 	if(currentBox !== false){
-		$('#js_content').animate({
+		$('#js_content_wrap').animate({
 			'opacity':'0'
 			,'margin-top':'60px'
 		},300,function(){ //happens after the animation ends.
@@ -56,7 +56,7 @@ function js_changeBox(box){
 }
 
 function js_hideBox(){
-	$('#js_content').animate({
+	$('#js_content_wrap').animate({
 		'opacity':'0'
 		,'margin-top':'60px'
 	},300,function(){
@@ -73,7 +73,7 @@ function js_showBox(box){
 	js_reCalcScreenHeight();
 	$('#js_content').html($('#'+box).html());
 	js_adjustHeader();
-		$('#js_content').animate({
+		$('#js_content_wrap').animate({
 		'opacity':'1'
 		,'margin-top':'30px'
 	},300);

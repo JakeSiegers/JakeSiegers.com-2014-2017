@@ -1,7 +1,7 @@
 body{
 	font-family: 'Roboto', sans-serif;
 	font-weight:400;
-	background: url(../img/bg.jpg) center center fixed;
+	background: url(../img/bg2.jpg) center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -10,17 +10,18 @@ body{
 	padding:0px;
 }
 a,a:visited{
-	color:white;
+	color:black;
 	text-decoration: underline;
 }
 a:hover{
 	color:rgb(126, 239, 104);
 	text-decoration: none;
 }
-.js_menuLink,.js_menuLink:visited{
+.js_menuLink,.js_menuLink:visited,.js_menuLink:active,.js_menuLink:focus{
+	color:white;
 	text-decoration: none;
 }
-.js_activeMenuLink{
+.js_menuLink:hover,.js_activeMenuLink{
 	color:rgb(126, 239, 104) !important;
 }
 .js_name{
@@ -33,16 +34,17 @@ a:hover{
 	opacity: 0;
 	margin-top:30px;
 }
+.js_content_wrap{
+	opacity:0;
+}
 .js_content{
 	display:block;
-	opacity: 0;
-	color:white;
+	color:black;
 	font-size:20px;
 	margin-top:60px;
 	opacity: 0px;
 	padding:10px;
 	border:solid 2px white;
-	border-radius: 5px;
 	margin-bottom:30px;
 }
 .js_contentData{
@@ -70,7 +72,7 @@ a:hover{
 	padding:0px;
 	border:0px;
 }
-.js_button{
+.js_button,.js_button:active,.js_button:focus{
 	background:rgba(255,255,255,0.5);
 	border:0;
 	border-radius:0px;
@@ -81,7 +83,7 @@ a:hover{
 	cursor: pointer;
 }
 .js_blur{
-	background: url(../img/bg-blur.jpg) center center fixed;
+	background: url(../img/bg2-blur.jpg) center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -95,15 +97,19 @@ a:hover{
 
 .js_emailErrorMessage{
 	color:#a94442;
+	text-align: center;
 }
 .js_emailHappyMessage{
 	color:rgb(126, 239, 104);
+	text-align: center;
 }
 
 input:focus,textarea:focus,select:focus{
-	border-color: rgb(126, 239, 104) !important;
+	border-color: white !important;
+	box-shadow: none !important;
+	/*border-color: rgb(126, 239, 104) !important;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
-	outline: 0 none !important;
+	outline: 0 none !important;*/
 }
 
 /*
