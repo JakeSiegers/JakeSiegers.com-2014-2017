@@ -49,11 +49,29 @@
 
 		<div class="js_contentData" id="js_workBox">
 			These are some of the projects I've worked on, or made in my free time:
-			<ul>
+			<!--<ul>
 				<li><a href="http://jakeisa.ninja/" target="_blank">My Un-named, Node.js Multplayer Game</a></li>
 				<li><a href="http://ssfdojo.mcleodgaming.com/" target="_blank">The SSF2 DOJO!! Website</a></li>
 				<li><a href="http://BBQKittenImprov.com/" target="_blank">Barbeque Kitten Improv Website</a></li>
-			</ul>
+			</ul>-->
+			<?php
+			require_once('portfolio.php');
+			foreach($portfolio as $row){
+				echo '<div class="js_portfolioTitle">'.$row['title'].'</div>';
+				echo '<div class="js_portfilioBoxFrame js_blur">';
+					echo '<div class="row">';
+						echo '<div class="col-xs-4">';
+							echo '<img src="'.$row['image'].'" class="img-responsive" alt="Responsive image">';
+						echo '</div>';
+						echo '<div class="col-xs-8">';
+							echo '<div class="js_portfilioBox js_white">';
+								echo '<div class="js_portfolioDesc">'.$row['desc'].'<br /><a href="'.$row['url'].'" target="_blank">[ View Project ]</a></div>';
+							echo '</div>';
+						echo '</div>';
+					echo '</div>';
+				echo '</div>';
+			}
+			?>
 			Almost all of the professional projects I've worked on aren't public, so email me if you're interested in them. I'm more than happy to share what I'm allowed to.
 		</div>
 

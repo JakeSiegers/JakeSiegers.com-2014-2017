@@ -46,7 +46,7 @@ function js_changeBox(box){
 	if(currentBox !== false){
 		$('#js_content_wrap').animate({
 			'opacity':'0'
-			,'margin-top':'60px'
+			,'margin-top':'30px'
 		},300,function(){ //happens after the animation ends.
 			js_showBox(box);
 		});
@@ -58,7 +58,7 @@ function js_changeBox(box){
 function js_hideBox(){
 	$('#js_content_wrap').animate({
 		'opacity':'0'
-		,'margin-top':'60px'
+		,'margin-top':'30px'
 	},300,function(){
 		$('#js_content').html('');
 		js_reCalcScreenHeight();
@@ -75,7 +75,7 @@ function js_showBox(box){
 	js_adjustHeader();
 		$('#js_content_wrap').animate({
 		'opacity':'1'
-		,'margin-top':'30px'
+		,'margin-top':'0px'
 	},300);
 	currentBox = box;
 	$('.js_menuLink').removeClass('js_activeMenuLink');
