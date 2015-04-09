@@ -39,6 +39,10 @@ function js_reCalcScreenHeight(){
 }
 
 function js_changeBox(box){
+	if(sendingEmail){
+		return false;
+	}
+
 	if(currentBox === box){
 		js_hideBox();
 		return false;
@@ -56,6 +60,10 @@ function js_changeBox(box){
 }
 
 function js_hideBox(){
+	if(sendingEmail){
+		return false;
+	}
+
 	$('#js_content_wrap').animate({
 		'opacity':'0'
 		,'margin-top':'-60px'
@@ -69,6 +77,15 @@ function js_hideBox(){
 }
 
 function js_showBox(box){
+	if(sendingEmail){
+		return false;
+	}
+	//remove any errors
+	$('[wrapping]').removeClass('has-error');
+	$('.js_emailLoader').html('<i class="fa fa-refresh fa-spin"></i>');
+	$('.js_emailErrorMessage').html('');
+	$('.js_emailHappyMessage').html('');
+
 	$('#js_content_wrap').html('');
 	js_reCalcScreenHeight();
 	$('#js_content_wrap').html($('#'+box).html());
