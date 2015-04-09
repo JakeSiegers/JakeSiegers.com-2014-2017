@@ -11,7 +11,7 @@
 			,'url' => 'http://jakeisa.ninja/audioapi'
 			,'github' => 'https://github.com/JakeSiegers/JavascriptMusicVisualizer'
 			,'title' => 'Audio Api Example'
-			,'desc' => 'This is a pure vanialla javascript & canvas audio visual. It uses the new audio API that is present in modern versions of firefox and chrome (Sorry, no IE yet!). The entire project is open source on GitHub. Fork Me!'
+			,'desc' => 'This is a pure vanialla javascript & canvas audio visual. It uses the new audio API that is present in modern versions of Firefox and Chrome (Sorry, no IE or Safari yet!). The entire project is open source on GitHub. Fork Me!'
 		)
 		,array(
 			'image' => 'img/portfolio/ssfdojo.jpg'

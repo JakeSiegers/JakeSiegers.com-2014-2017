@@ -63,7 +63,7 @@
 				echo '<div class="js_portfolioTitle">'.$row['title'].'</div>';
 				echo '<div class="js_portfilioBoxFrame js_blur">';
 					echo '<div class="row">';
-						echo '<div class="col-s-4">';
+						echo '<div class="col-xs-4">';
 							echo '<img src="'.$row['image'].'" class="img-responsive js_image" alt="Responsive image">';
 						echo '</div>';
 						echo '<div class="col-xs-8">';
