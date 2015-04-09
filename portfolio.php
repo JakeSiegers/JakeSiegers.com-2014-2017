@@ -7,6 +7,13 @@
 			,'desc' => 'My Un-named, Node.js Multplayer Game. Grab some friends, and try it out! Written in Javascript using Phaser.js and Socket.io'
 		)
 		,array(
+			'image' => 'img/portfolio/visual.jpg'
+			,'url' => 'http://jakeisa.ninja/audioapi'
+			,'github' => 'https://github.com/JakeSiegers/JavascriptMusicVisualizer'
+			,'title' => 'Audio Api Example'
+			,'desc' => 'This is a pure vanialla javascript & canvas audio visual. It uses the new audio API that is present in modern versions of firefox and chrome (Sorry, no IE yet!). The entire project is open source on GitHub. Fork Me!'
+		)
+		,array(
 			'image' => 'img/portfolio/ssfdojo.jpg'
 			,'url' => 'http://ssfdojo.mcleodgaming.com/'
 			,'title' => 'The SSF2 Dojo'

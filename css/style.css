@@ -4,31 +4,30 @@ html {
 body{
 	font-family: 'Roboto', sans-serif;
 	font-weight:400;
-	background: url(../img/bg2.jpg) center center fixed;
+	/*background: url(../img/bg2.jpg) center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
+	background:#202020;
 	margin:0px;
 	padding:0px;
+	color:white;
 }
 a,a:visited{
-	color:black;
+	color:white;
 	text-decoration: underline;
 }
 a:hover{
 	text-decoration: none;
-	color:rgb(126, 239, 104)
+	color:#e79c10
 }
 .js_menuLink,.js_menuLink:visited,.js_menuLink:active,.js_menuLink:focus{
 	color:white;
 	text-decoration: none;
 }
 .js_menuLink:hover,.js_activeMenuLink{
-	color:rgb(126, 239, 104) !important;
-}
-.js_name{
-	color:white;
+	color:#e79c10 !important;
 }
 .js_wrap{
 	width:100%;
@@ -39,58 +38,79 @@ a:hover{
 }
 .js_content_wrap{
 	opacity:0;
-}
-.js_content{
-	display:block;
-	color:black;
+	background:#262626;
+	color:white;
 	font-size:15px;
-	margin-top:60px;
 	opacity: 0px;
 	padding:10px;
-	border:solid 2px white;
 	margin-bottom:30px;
+	margin-top:-60px; /* starting pos */
 }
 .js_contentData{
 	display:none;
 }
 .js_portfilioBoxFrame{
-	border:solid 2px white;
+	border:solid 2px #202020;
 	padding:5px;
 	margin-bottom:5px;
 }
+
+.js_portfilioBoxFrame .js_image{
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+.js_portfilioBoxFrame:hover .js_image{
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+
+
 .js_portfilioBox{
 	padding:5px;
 }
 .js_portfilioBox a{
 	text-decoration: none;
 	text-align:center;
-	display:block;
+	display:inline-block;
 	margin-top:10px;
+	font-weight: 400;
 }
 .js_portfolioTitle{
 	text-align:left;
 	font-weight:900;
 	font-size:18px;
+	font-size:20px;
 }
 .js_portfolioDesc{
 	font-size:15px;
 }
 .js_title{
-	font-weight:900;
-	color:#929292;
+	font-weight:100;
 	font-size:60px;
 	text-align:center;
+	color:#1d9099;
+}
+.js_name{
+	color:#d53a33;
 }
 .js_desc{
 	color:white;
 	font-size:20px;
 	text-align:center;
+	font-weight: 100;
 }
 .js_formField{
 	font-family: 'Roboto', sans-serif;
 	color:white;
-	border:solid 2px white;
+	border:solid 2px #202020;
 	border-radius:0px;
+	background:#262626;
+	-webkit-box-shadow: none !important;
+  	-moz-box-shadow: none !important;
+  	box-shadow: none !important;
+}
+.has-error .form-control{
+	border-color:#d53a33 !important;
 }
 .js_button_wrap{
 	height:50px;
@@ -98,39 +118,33 @@ a:hover{
 	border:0px;
 }
 .js_button,.js_button:active,.js_button:focus{
-	background:rgba(255,255,255,0.5);
+	background: #e79c10; /*#56c74b*/ /*#d53a33*/
 	border:0;
 	border-radius:0px;
 	color:black;
 }
 .js_button:hover{
-	background:rgba(255,255,255,0.1);
+	background:;
 	cursor: pointer;
-}
-.js_blur{
-	background: url(../img/bg2-blur.jpg) center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-.js_white{
-	background:rgba(255,255,255,0.5);
+	background:#202020;
+	color:white;
 }
 
+
+
 .js_emailErrorMessage{
-	color:#a94442;
+	color:#d53a33 ;
 	text-align: center;
 }
 .js_emailHappyMessage{
-	color:rgb(126, 239, 104);
+	color:#56c74b;
 	text-align: center;
 }
 
 input:focus,textarea:focus,select:focus{
-	border-color: white !important;
-	box-shadow: none !important;
-	/*border-color: rgb(126, 239, 104) !important;
+	border-color: #202020 !important;
+	box-shadow: #202020 !important;
+	/*border-color: #e79c10 !important;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
 	outline: 0 none !important;*/
 }

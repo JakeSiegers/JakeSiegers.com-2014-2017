@@ -46,7 +46,7 @@ function js_changeBox(box){
 	if(currentBox !== false){
 		$('#js_content_wrap').animate({
 			'opacity':'0'
-			,'margin-top':'30px'
+			,'margin-top':'-60px'
 		},300,function(){ //happens after the animation ends.
 			js_showBox(box);
 		});
@@ -58,9 +58,9 @@ function js_changeBox(box){
 function js_hideBox(){
 	$('#js_content_wrap').animate({
 		'opacity':'0'
-		,'margin-top':'30px'
+		,'margin-top':'-60px'
 	},300,function(){
-		$('#js_content').html('');
+		$('#js_content_wrap').html('');
 		js_reCalcScreenHeight();
 		js_adjustHeader();
 		$('.js_menuLink').removeClass('js_activeMenuLink');
@@ -69,13 +69,13 @@ function js_hideBox(){
 }
 
 function js_showBox(box){
-	$('#js_content').html('');
+	$('#js_content_wrap').html('');
 	js_reCalcScreenHeight();
-	$('#js_content').html($('#'+box).html());
+	$('#js_content_wrap').html($('#'+box).html());
 	js_adjustHeader();
 		$('#js_content_wrap').animate({
 		'opacity':'1'
-		,'margin-top':'0px'
+		,'margin-top':'30px'
 	},300);
 	currentBox = box;
 	$('.js_menuLink').removeClass('js_activeMenuLink');

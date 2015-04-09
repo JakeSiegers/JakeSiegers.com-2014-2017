@@ -1,3 +1,8 @@
+<?php
+	$js_randomGreetings = array("Hello World,","Sup Kiddos,","Ohai,")
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,17 +19,15 @@
 	</head>
 	<body>
 		<div class="container js_head" id="js_head">
-				<div class="js_title">Hey, I'm <span class="js_name">Jake Siegers</span></div>
-				<div class="js_desc">Web Application Developer, Programmer, and College Kid.</div>
+				<div class="js_title"><?php echo $js_randomGreetings[array_rand($js_randomGreetings,1)] ?> I'm <span class="js_name">Jake Siegers</span></div>
+				<div class="js_desc">Web Application Developer, Programmer and Designer. Also Enjoys Cooking.</div>
 				<div class="js_desc"><a href="" class="js_menuLink" linkTo="js_contactBox">[ Email Me ]</a> <a href="" class="js_menuLink" linkTo="js_workBox">[ My Projects ]</a> <a href="https://github.com/JakeSiegers" class="js_menuLink" target="_blank">[ <i class="fa fa-github"></i> ]</a></div>
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
-					<div class="js_content_wrap js_blur" id="js_content_wrap">
-						<div class="js_content js_white" id="js_content">
+					<div class="js_content_wrap" id="js_content_wrap">
 
-						</div>
 					</div>
 				</div>
 			</div>
@@ -33,13 +36,13 @@
 		<div class="js_contentData" id="js_contactBox">
 			<form id="js_contactForm">
 				<div class="form-group" wrapping="name">
-					<input type="text" class="form-control input-lg js_formField js_blur" placeholder="Name" name="name"/>
+					<input type="text" class="form-control input-lg js_formField" placeholder="Name" name="name"/>
 				</div>
 				<div class="form-group" wrapping="email">
-					<input type="text" class="form-control input-lg js_formField js_blur" placeholder="Email" name="email"/>
+					<input type="text" class="form-control input-lg js_formField" placeholder="Email" name="email"/>
 				</div>
 				<div class="form-group" wrapping="message">
-					<textarea class="form-control input-lg js_formField js_blur" placeholder="Message" name="message" rows="10"></textarea>
+					<textarea class="form-control input-lg js_formField" placeholder="Message" name="message" rows="10"></textarea>
 				</div>
 				<button onclick="js_sendMessage(); return false;" class="btn btn-primary btn-lg btn-block js_button"><span class="js_emailLoader"></span> Send </button>
 			</form>
@@ -60,12 +63,16 @@
 				echo '<div class="js_portfolioTitle">'.$row['title'].'</div>';
 				echo '<div class="js_portfilioBoxFrame js_blur">';
 					echo '<div class="row">';
-						echo '<div class="col-xs-4">';
-							echo '<img src="'.$row['image'].'" class="img-responsive" alt="Responsive image">';
+						echo '<div class="col-s-4">';
+							echo '<img src="'.$row['image'].'" class="img-responsive js_image" alt="Responsive image">';
 						echo '</div>';
 						echo '<div class="col-xs-8">';
 							echo '<div class="js_portfilioBox js_white">';
-								echo '<div class="js_portfolioDesc">'.$row['desc'].'<br /><a href="'.$row['url'].'" target="_blank">[ View Project ]</a></div>';
+								echo '<div class="js_portfolioDesc">'.$row['desc'].'<br /><a href="'.$row['url'].'" target="_blank">[ View Project ]</a>';
+								if(isset($row['github'])){
+									echo '<a href="'.$row['github'].'" target="_blank">[ <i class="fa fa-github"></i> ]</a>';
+								}
+								echo '</div>';
 							echo '</div>';
 						echo '</div>';
 					echo '</div>';

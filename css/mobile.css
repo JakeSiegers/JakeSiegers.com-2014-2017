@@ -14,4 +14,8 @@
 		display:block;
 		font-size:25px;
 	}
+	.js_portfilioBoxFrame .js_image{
+		-webkit-filter: grayscale(0%);
+		filter: grayscale(0%);
+	}
 }
