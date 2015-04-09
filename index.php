@@ -14,10 +14,9 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/mobile.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/functions.js"></script>
 	</head>
 	<body>
+		<canvas class="vis_visualizer" width="1280" height="720" ></canvas>
 		<div class="container js_head" id="js_head">
 				<div class="js_title"><?php echo $js_randomGreetings[array_rand($js_randomGreetings,1)] ?> I'm <span class="js_name">Jake Siegers</span></div>
 				<div class="js_desc">Web Application Developer, Programmer and Designer. Also Enjoys Cooking.</div>
@@ -81,6 +80,8 @@
 			?>
 			Almost all of the professional projects I've worked on aren't public, so email me if you're interested in them. I'm more than happy to share what I'm allowed to.
 		</div>
-
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/functions.js"></script>
+		<script src="js/visualizer.js"></script>
 	</body>
 </html>

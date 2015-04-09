@@ -149,6 +149,12 @@ input:focus,textarea:focus,select:focus{
 	outline: 0 none !important;*/
 }
 
+.vis_visualizer{
+	position:fixed;
+	top:0;
+	z-index: -10;
+}
+
 /*
 .js_moveAround{
 	-webkit-animation: move 1s infinite;
