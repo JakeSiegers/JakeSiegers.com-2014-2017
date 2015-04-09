@@ -37,19 +37,28 @@ function vis_draw(){
 	canvasCtx.fillStyle = '#202020';
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 
-	sinCount+=0.1;
+	sinCount+=0.005;
 	if(sinCount > Math.PI*2){
 		sinCount = 0;
 	}
-	canvasCtx.fillStyle = '#1d9099';
-	vis_drawRect(canvas.width/2 + Math.cos(sinCount)*(canvas.width/2), canvas.height/2)
+	
+	for(var i=0;i<40;i++){
+		if(i%2==0){
+			canvasCtx.fillStyle = 'rgba(29,144,153,0.5)';
+		}else{
+			canvasCtx.fillStyle = 'rgba(213,58,51,0.5)';
+		}
+		vis_drawRect(((canvas.width/40)*i)+Math.sin(sinCount)*50,(canvas.height/2)+Math.sin(sinCount*(i+1))*(canvas.height/2));
+	}
+	
 }
 
 function vis_drawRect(x,y){
-	var gridSize = 100
-	var gridOffset = gridSize/2;
-	var ax=gridSize * Math.floor((x + gridOffset) / gridSize);
-	var ay=gridSize * Math.floor((y + gridOffset) / gridSize);
-	console.log(ax);
-	canvasCtx.fillRect(ax,ay,gridSize,gridSize);
+	var gridSizeX = 40
+	var gridSizeY = 40
+	var gridOffsetX = gridSizeX/2;
+	var gridOffsetY = gridSizeY/2;
+	var ax=gridSizeX * Math.floor((x + gridOffsetX) / gridSizeX);
+	var ay=gridSizeY * Math.floor((y + gridOffsetY) / gridSizeY);
+	canvasCtx.fillRect(ax,ay,gridSizeX,gridSizeY);
 }
