@@ -80,11 +80,6 @@ function js_showBox(box){
 	if(sendingEmail){
 		return false;
 	}
-	//remove any errors
-	$('[wrapping]').removeClass('has-error');
-	$('.js_emailLoader').html('<i class="fa fa-refresh fa-spin"></i>');
-	$('.js_emailErrorMessage').html('');
-	$('.js_emailHappyMessage').html('');
 
 	$('#js_content_wrap').html('');
 	js_reCalcScreenHeight();
