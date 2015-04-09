@@ -32,6 +32,9 @@ function js_showHead(){
 	$('#js_head').animate({
 		'opacity':'1'
 	},500);
+	$('.vis_visualizer').animate({
+		'opacity':'1'
+	},500);
 }
 
 function js_reCalcScreenHeight(){
