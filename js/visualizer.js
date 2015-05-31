@@ -2,6 +2,7 @@ var canvas;
 var canvasCtx;
 var trigCount = 0;
 var visPos = {x:1280/2,y:720/2};
+var mousePos = {x:1280/2,y:720/2};
 var currentVisuals = new Array();
 var numVisuals = 6;
 var visColors = {
@@ -58,7 +59,7 @@ function vis_initVisualizer(){
 	canvasCtx.fillStyle = '#202020';
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 	//MOUSE SUPPORT
-	//document.body.addEventListener('mousemove', vis_updateMouse, false);
+	document.body.addEventListener('mousemove', vis_updateMouse, false);
 	setInterval(vis_draw,10);
 	vis_changeVisual();
 }
@@ -82,7 +83,7 @@ function vis_getScreenHeight(){
 
 function vis_updateMouse(mouseEvent) {
 	var rect = canvas.getBoundingClientRect();
-	visPos = {
+	mousePos = {
 		x: Math.round((mouseEvent.clientX-rect.left)/(rect.right-rect.left)*canvas.width),
 		y: Math.round((mouseEvent.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height)
 	};
@@ -119,8 +120,8 @@ function vis_draw(){
 		visuals[currentVisuals[i]]();	
 	}
 	
-	//canvasCtx.fillStyle = visColors.yellow;
-	//vis_drawRect(visPos.x,visPos.y);
+	canvasCtx.fillStyle = visColors.yellow;
+	vis_drawRect(mousePos.x,mousePos.y);
 
 	canvasCtx.fillStyle = 'rgba(32,32,32,0.9)';
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
