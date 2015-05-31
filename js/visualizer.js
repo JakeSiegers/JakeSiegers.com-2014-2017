@@ -1,7 +1,50 @@
 var canvas;
 var canvasCtx;
-var sinCount = 0;
-var ratio
+var trigCount = 0;
+var visPos = {x:1280/2,y:720/2};
+var currentVisuals = new Array();
+var numVisuals = 6;
+var visColors = {
+	blue: 'rgba(29,144,153,1)',
+	red: 'rgba(213,58,51,1)',
+	yellow: 'rgba(231,156,16,1)'
+}
+var visuals = {
+	0:function(){
+		//360 length spinning rod
+		canvasCtx.fillStyle = visColors.yellow;
+		for(var i=10;i<=36;i++){
+			//vis_drawRect(visPos.x+(Math.cos(trigCount)*20*i),visPos.y+(Math.sin(trigCount)*20*i));	
+			vis_drawCircle(visPos.x,visPos.y,10*i,2,true,true);
+		}
+	},
+	1:function(){
+		canvasCtx.fillStyle = visColors.blue;
+		vis_drawCircle(visPos.x,visPos.y,100+Math.tan(trigCount)*50,30);
+	},
+	2:function(){
+		canvasCtx.fillStyle = visColors.red;
+		vis_drawCircle(visPos.x,visPos.y,200+Math.cos(trigCount)*50,30);
+	},
+	3:function(){
+		canvasCtx.fillStyle = visColors.yellow;
+		vis_drawCircle(visPos.x,visPos.y,200+Math.cos(trigCount)*100,30,true);
+		canvasCtx.fillStyle = visColors.blue;
+		vis_drawCircle(visPos.x,visPos.y,50,10,true,true);
+	},
+	4:function(){
+		canvasCtx.fillStyle = visColors.red;
+		vis_drawCircle(visPos.x,visPos.y,100,2,true,true);
+		canvasCtx.fillStyle = visColors.blue;
+		vis_drawCircle(visPos.x,visPos.y,200,3,true,true);
+		canvasCtx.fillStyle = visColors.yellow;
+		vis_drawCircle(visPos.x,visPos.y,300,5,true,true);
+	},
+	5:function(){
+		canvasCtx.fillStyle = visColors.red;
+		vis_drawCircle(visPos.x,visPos.y,300,10,true,true);
+	}
+};
 
 $(function(){
 	vis_initVisualizer();
@@ -14,8 +57,10 @@ function vis_initVisualizer(){
 	canvasCtx = canvas.getContext("2d");
 	canvasCtx.fillStyle = '#202020';
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
-	ratio = vis_getScreenWidth()/vis_getScreenHeight();
+	//MOUSE SUPPORT
+	//document.body.addEventListener('mousemove', vis_updateMouse, false);
 	setInterval(vis_draw,100);
+	vis_changeVisual();
 }
 
 function vis_getScreenWidth(){
@@ -35,32 +80,78 @@ function vis_getScreenHeight(){
 	return y;
 }
 
-function vis_draw(){
-	canvasCtx.fillStyle = '#202020';
-	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
+function vis_updateMouse(mouseEvent) {
+	var rect = canvas.getBoundingClientRect();
+	visPos = {
+		x: Math.round((mouseEvent.clientX-rect.left)/(rect.right-rect.left)*canvas.width),
+		y: Math.round((mouseEvent.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height)
+	};
+}
 
-	sinCount+=0.01;
-	if(sinCount > Math.PI*2){
-		sinCount = 0;
+function vis_changeVisual(){
+	currentVisuals[0] = Math.floor(Math.random()*numVisuals);
+	//currentVisuals[1] = Math.floor(Math.random()*numVisuals);
+}
+
+function vis_draw(){
+	
+
+	trigCount+=0.1;
+	if(trigCount > Math.PI*2){
+		trigCount = 0;
+		vis_changeVisual();
 	}
 
+	/*
+	//Just draws 2 basic sinewaves. Not interactive.
 	for(var i=0;i<20;i++){
 		if(i%2==0){
 			canvasCtx.fillStyle = 'rgba(29,144,153,0.3)';
 		}else{
 			canvasCtx.fillStyle = 'rgba(213,58,51,0.3)';
 		}
-		vis_drawRect((canvas.width/20)*i,(canvas.height/2)+Math.sin(sinCount*(i+1))*(canvas.height/2));
+		vis_drawRect((canvas.width/20)*i,(canvas.height/2)+Math.sin(trigCount*(i+1))*(canvas.height/2));
 	}
+	*/
 
+	//run current visuals
+	for(var i in currentVisuals){
+		visuals[currentVisuals[i]]();	
+	}
+	
+	//canvasCtx.fillStyle = visColors.yellow;
+	//vis_drawRect(visPos.x,visPos.y);
+
+	canvasCtx.fillStyle = 'rgba(32,32,32,0.7)';
+	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
+}
+
+//Hope you know your trig! I left some notes so maybe you can learn off of me 
+//<3 Jake
+function vis_drawCircle(x,y,width,numPixels,spinX,spinY){
+	for(var i=0;i<(2*Math.PI);i+=(2*Math.PI/numPixels)){ //'numPixels' point(s) in a circle, will loop over and spit evenly
+		vis_drawRect(
+			x //Center X
+			+(
+				Math.cos((spinX?trigCount:0)+i) // Cos = X edge of circle
+				*width //Width of circle
+			)
+		,
+			y //Center Y
+			+(
+				Math.sin((spinY?trigCount:0)+i)
+				*width
+			)
+		);	
+	}
 }
 
 function vis_drawRect(x,y){
-	var gridSizeX = 80;
-	var gridSizeY = 80;
+	var gridSizeX = 40;
+	var gridSizeY = 40;
 	var gridOffsetX = gridSizeX/2;
 	var gridOffsetY = gridSizeY/2;
-	var ax=gridSizeX * Math.floor((x + gridOffsetX) / gridSizeX);
-	var ay=gridSizeY * Math.floor((y + gridOffsetY) / gridSizeY);
+	var ax=gridSizeX * Math.floor(x/gridSizeX);
+	var ay=gridSizeY * Math.floor(y/gridSizeY);
 	canvasCtx.fillRect(ax,ay,gridSizeX,gridSizeY);
 }
