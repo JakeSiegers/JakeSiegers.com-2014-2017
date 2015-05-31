@@ -59,7 +59,7 @@ function vis_initVisualizer(){
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 	//MOUSE SUPPORT
 	//document.body.addEventListener('mousemove', vis_updateMouse, false);
-	setInterval(vis_draw,100);
+	setInterval(vis_draw,10);
 	vis_changeVisual();
 }
 
@@ -96,7 +96,7 @@ function vis_changeVisual(){
 function vis_draw(){
 	
 
-	trigCount+=0.1;
+	trigCount+=0.01;
 	if(trigCount > Math.PI*2){
 		trigCount = 0;
 		vis_changeVisual();
@@ -122,7 +122,7 @@ function vis_draw(){
 	//canvasCtx.fillStyle = visColors.yellow;
 	//vis_drawRect(visPos.x,visPos.y);
 
-	canvasCtx.fillStyle = 'rgba(32,32,32,0.7)';
+	canvasCtx.fillStyle = 'rgba(32,32,32,0.9)';
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 }
 
