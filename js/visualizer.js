@@ -90,7 +90,7 @@ function vis_updateMouse(mouseEvent) {
 
 function vis_changeVisual(){
 	currentVisuals[0] = Math.floor(Math.random()*numVisuals);
-	//currentVisuals[1] = Math.floor(Math.random()*numVisuals);
+	currentVisuals[1] = Math.floor(Math.random()*numVisuals);
 }
 
 function vis_draw(){
