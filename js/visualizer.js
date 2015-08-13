@@ -53,8 +53,8 @@ $(function(){
 
 function vis_initVisualizer(){
 	canvas = document.querySelector('.vis_visualizer');
-	canvas.style.width=vis_getScreenWidth()+"px";
-	canvas.style.height=vis_getScreenHeight()+"px";
+	//canvas.style.width=vis_getScreenWidth()+"px";
+	//canvas.style.height=vis_getScreenHeight()+"px";
 	canvasCtx = canvas.getContext("2d");
 	canvasCtx.fillStyle = '#202020';
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);

@@ -53,7 +53,7 @@ function js_changeBox(box){
 	if(currentBox !== false){
 		$('#js_content_wrap').animate({
 			'opacity':'0'
-			,'margin-top':'-60px'
+			,'margin-top':'60px'
 		},300,function(){ //happens after the animation ends.
 			js_showBox(box);
 		});
@@ -69,7 +69,7 @@ function js_hideBox(){
 
 	$('#js_content_wrap').animate({
 		'opacity':'0'
-		,'margin-top':'-60px'
+		,'margin-top':'60px'
 	},300,function(){
 		$('#js_content_wrap').html('');
 		js_reCalcScreenHeight();

@@ -44,7 +44,7 @@ a:hover{
 	opacity: 0px;
 	padding:10px;
 	margin-bottom:30px;
-	margin-top:-60px; /* starting pos */
+	margin-top:60px; /* starting pos */
 }
 .js_contentData{
 	display:none;
@@ -148,13 +148,18 @@ input:focus,textarea:focus,select:focus{
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
 	outline: 0 none !important;*/
 }
-
+.vis_wrap{
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index: -1;
+}
 .vis_visualizer{
 	opacity: 0;
-	position:fixed;
-	top:0;
-	z-index: -10;
+	height:100%;
 }
+
+
 
 /*
 .js_moveAround{
