@@ -81,7 +81,10 @@ function vis_initVisualizer(){
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 	//MOUSE SUPPORT
 	document.body.addEventListener('mousemove', vis_updateMouse, false);
-	setInterval(vis_draw,20);
+	
+	//setInterval(vis_draw,20);
+	requestAnimationFrame(vis_draw);
+	
 	vis_changeVisual();
 }
 
@@ -137,6 +140,8 @@ function vis_draw(){
 	
 	//canvasCtx.fillStyle = visColors.yellow;
 	//vis_drawRect(mousePos.x,mousePos.y);
+
+	requestAnimationFrame(vis_draw);
 }
 
 //Hope you know your trig! I left some notes so maybe you can learn off of me 
