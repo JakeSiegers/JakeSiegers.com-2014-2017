@@ -9,6 +9,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Jake Siegers - Web Developer</title>
+		<meta name="description" content="&quot;Now avaiable in web 2.0!&quot;" />
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,100' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -41,9 +42,7 @@
 		<!-- end of icons -->
 	</head>
 	<body>
-		<div class="vis_wrap" style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;">
-			<canvas class="vis_visualizer" width="1280" height="720" ></canvas>
-		</div>
+		<canvas class="js_backgroundCanvas" id="js_backgroundCanvas" width="1280" height="720" ></canvas>
 		<div class="container js_head" id="js_head">
 				<div class="js_title"><?php echo $js_randomGreetings[array_rand($js_randomGreetings,1)] ?> I'm <span class="js_name">Jake Siegers</span></div>
 				<div class="js_desc">Web Application Developer, Programmer and Designer. Also Enjoys Cooking.</div>

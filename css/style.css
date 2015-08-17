@@ -131,7 +131,6 @@ a:hover{
 }
 
 
-
 .js_emailErrorMessage{
 	color:#d53a33 ;
 	text-align: center;
@@ -141,45 +140,26 @@ a:hover{
 	text-align: center;
 }
 
+.js_backgroundCanvas {
+	opacity:0.2;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+/* BOOTSTRAP OVERRIDES */
+
 input:focus,textarea:focus,select:focus{
 	border-color: #202020 !important;
 	box-shadow: #202020 !important;
-	/*border-color: #e79c10 !important;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
-	outline: 0 none !important;*/
 }
-.vis_wrap{
-	position:fixed;
-	top:0px;
-	left:0px;
-	z-index: -1;
-}
-.vis_visualizer{
-	opacity: 0;
-	height:100%;
-}
-
-
-
-/*
-.js_moveAround{
-	-webkit-animation: move 1s infinite;
-	-webkit-animation-direction: alternate;
-	-webkit-animation-timing-function: ease-in-out;
-	animation: move 1s infinite;
-	animation-direction: alternate;
-	animation-timing-function: ease-in-out;
-}
-
-@keyframes move{
- 	from {margin-top:10px;}
-	to {margin-top:600px;}
-}
-@-webkit-keyframes move {
-	from {margin-top:10px;}
-	to {margin-top:600px;}
-}
-*/
 
 ::-webkit-input-placeholder { /* WebKit browsers */
 	color:rgba(255, 255, 255, 0.5) !important;

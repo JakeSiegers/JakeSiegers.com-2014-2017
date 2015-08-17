@@ -4,12 +4,14 @@ var trigCount = 0;
 var visPos = {x:1280/2,y:720/2};
 var mousePos = {x:1280/2,y:720/2};
 var currentVisuals = new Array();
-var numVisuals = 6;
+
 var visColors = {
 	blue: 'rgba(29,144,153,1)',
 	red: 'rgba(213,58,51,1)',
 	yellow: 'rgba(231,156,16,1)'
 }
+var mouseSnake = [];
+
 var visuals = {
 	0:function(){
 		//360 length spinning rod
@@ -44,15 +46,34 @@ var visuals = {
 	5:function(){
 		canvasCtx.fillStyle = visColors.red;
 		vis_drawCircle(visPos.x,visPos.y,300,10,true,true);
+	},
+	6:function(){
+		for(var i=0;i<20;i++){
+			if(i%2==0){
+				canvasCtx.fillStyle = visColors.red;
+				vis_drawRect((canvas.width/20)*i,(canvas.height/2)+Math.sin(trigCount*(i+1))*(canvas.height/4));	
+			}
+		}
+	},
+	7:function(){
+		for(var i=0;i<20;i++){
+			if(i%2!=0){
+				canvasCtx.fillStyle = visColors.blue;
+				vis_drawRect((canvas.width/20)*i,(canvas.height/2)+Math.sin(trigCount*(i+1))*(canvas.height/4));
+			}
+		}
 	}
 };
+
+//Count visual functions above!
+var numVisuals = Object.keys(visuals).length;
 
 $(function(){
 	vis_initVisualizer();
 });
 
 function vis_initVisualizer(){
-	canvas = document.querySelector('.vis_visualizer');
+	canvas = document.querySelector('#js_backgroundCanvas');
 	//canvas.style.width=vis_getScreenWidth()+"px";
 	//canvas.style.height=vis_getScreenHeight()+"px";
 	canvasCtx = canvas.getContext("2d");
@@ -60,7 +81,7 @@ function vis_initVisualizer(){
 	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 	//MOUSE SUPPORT
 	document.body.addEventListener('mousemove', vis_updateMouse, false);
-	setInterval(vis_draw,10);
+	setInterval(vis_draw,20);
 	vis_changeVisual();
 }
 
@@ -95,7 +116,8 @@ function vis_changeVisual(){
 }
 
 function vis_draw(){
-	
+	canvasCtx.fillStyle = 'rgba(32,32,32,0.1)';
+	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 
 	trigCount+=0.01;
 	if(trigCount > Math.PI*2){
@@ -105,14 +127,7 @@ function vis_draw(){
 
 	/*
 	//Just draws 2 basic sinewaves. Not interactive.
-	for(var i=0;i<20;i++){
-		if(i%2==0){
-			canvasCtx.fillStyle = 'rgba(29,144,153,0.3)';
-		}else{
-			canvasCtx.fillStyle = 'rgba(213,58,51,0.3)';
-		}
-		vis_drawRect((canvas.width/20)*i,(canvas.height/2)+Math.sin(trigCount*(i+1))*(canvas.height/2));
-	}
+	
 	*/
 
 	//run current visuals
@@ -122,9 +137,6 @@ function vis_draw(){
 	
 	canvasCtx.fillStyle = visColors.yellow;
 	vis_drawRect(mousePos.x,mousePos.y);
-
-	canvasCtx.fillStyle = 'rgba(32,32,32,0.9)';
-	canvasCtx.fillRect(0, 0, canvas.width,  canvas.height);
 }
 
 //Hope you know your trig! I left some notes so maybe you can learn off of me 
