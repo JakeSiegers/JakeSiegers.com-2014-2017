@@ -107,7 +107,6 @@
 			Almost all of the professional projects I've worked on aren't public, so email me if you're interested in them. I'm more than happy to share what I'm allowed to.
 		</div>
 		<script src="js/libraries/jquery-1.11.1.min.js"></script>
-		<script src="js/libraries/glfx.js"></script>
 		<script src="js/functions.js"></script>
 		<script src="js/visualizer.js"></script>
 	</body>
