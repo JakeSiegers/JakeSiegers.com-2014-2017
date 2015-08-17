@@ -70,6 +70,7 @@ var numVisuals = Object.keys(visuals).length;
 
 $(function(){
 	vis_initVisualizer();
+	startfakeCRT();
 });
 
 function vis_initVisualizer(){
@@ -137,6 +138,51 @@ function vis_draw(){
 	
 	canvasCtx.fillStyle = visColors.yellow;
 	vis_drawRect(mousePos.x,mousePos.y);
+
+	crt();
+
+	
+}
+
+var glcanvas;
+var source;
+var srcctx;
+var texture;
+function startfakeCRT(){
+    
+    // Try to create a WebGL canvas (will fail if WebGL isn't supported)
+    try {
+        glcanvas = fx.canvas();
+    } catch (e) {return;}
+    
+    // Assumes the first canvas tag in the document is the 2D game, but
+    // obviously we could supply a specific canvas element here.
+    source = document.getElementsByTagName('canvas')[0];
+    srcctx = source.getContext('2d');
+    
+    // This tells glfx what to use as a source image
+    texture = glcanvas.texture(source);
+    
+    // Hide the source 2D canvas and put the WebGL Canvas in its place
+    source.parentNode.insertBefore(glcanvas, source);
+    source.style.display = 'none';
+    glcanvas.className = source.className;
+    glcanvas.id = source.id;
+    source.id = 'old_' + source.id;
+}
+
+function crt(){
+	// Give the source scanlines
+	//srcctx.drawImage(lines, 0, 0, w, h);
+
+	// Load the latest source frame
+	texture.loadContentsOf(source);
+
+	// Apply WebGL magic
+	glcanvas.draw(texture)
+	.bulgePinch(canvas.width/2, canvas.height/2, canvas.width*.75, 0.42)
+	//.vignette(0.25, 0.74)
+	.update();
 }
 
 //Hope you know your trig! I left some notes so maybe you can learn off of me 
