@@ -8,7 +8,8 @@ var currentVisuals = new Array();
 var visColors = {
 	blue: 'rgba(29,144,153,1)',
 	red: 'rgba(213,58,51,1)',
-	yellow: 'rgba(231,156,16,1)'
+	yellow: 'rgba(231,156,16,1)',
+	green: 'rgba(86,199,75,1)'
 }
 var mouseSnake = [];
 
@@ -62,6 +63,19 @@ var visuals = {
 				vis_drawRect((canvas.width/20)*i,(canvas.height/2)+Math.sin(trigCount*(i+1))*(canvas.height/4));
 			}
 		}
+	},
+	8:function(){
+		canvasCtx.fillStyle = visColors.green;
+		
+		// -2 to 2
+		for(var i=-2;i<=2;i++){
+			var pos = (Math.sin(trigCount)*288)+288
+			pos = pos+(i) //add more cubes to the line!
+			var row = Math.floor(pos/32.0);
+			var x = (pos%32)*40;
+			var y = row*40;
+			vis_drawRect(x,y);
+		}
 	}
 };
 
@@ -114,8 +128,10 @@ function vis_updateMouse(mouseEvent) {
 }
 
 function vis_changeVisual(){
-	currentVisuals[0] = Math.floor(Math.random()*numVisuals);
-	currentVisuals[1] = Math.floor(Math.random()*numVisuals);
+	
+	currentVisuals[0] = Math.floor(Math.random()*(numVisuals));
+	currentVisuals[1] = Math.floor(Math.random()*(numVisuals));
+	
 }
 
 function vis_draw(){
