@@ -77,11 +77,6 @@
 
 		<div class="js_contentData" id="js_workBox">
 			These are some of the projects I've worked on, or made in my free time:
-			<!--<ul>
-				<li><a href="http://jakeisa.ninja/" target="_blank">My Un-named, Node.js Multplayer Game</a></li>
-				<li><a href="http://ssfdojo.mcleodgaming.com/" target="_blank">The SSF2 DOJO!! Website</a></li>
-				<li><a href="http://BBQKittenImprov.com/" target="_blank">Barbeque Kitten Improv Website</a></li>
-			</ul>-->
 			<?php
 			require_once('portfolio.php');
 			foreach($portfolio as $row){
