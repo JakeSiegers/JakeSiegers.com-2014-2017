@@ -18,8 +18,6 @@
 			print_r($cmdArgs);
 			$rsyncCommand="rsync ".implode(" ",$cmdArgs);
 			print_r($rsyncCommand);
-			$output;
-			$returnVar;
 			exec($rsyncCommand,$output,$returnVar);
 			echo implode("\n",$output);
 			return $this->exitCode($returnVar);
