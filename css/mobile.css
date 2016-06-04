@@ -18,4 +18,18 @@
 		-webkit-filter: grayscale(0%);
 		filter: grayscale(0%);
 	}
+
+	.js_zoomImageBoxTextWrap{
+		opacity: 1;
+		height: 30%;
+		bottom: 0px;
+		top:initial;
+		background:rgba(0,0,0,0.8);
+	}
+
+	.js_zoomImageBoxText{
+		font-size:20px;
+	}
+
+
 }

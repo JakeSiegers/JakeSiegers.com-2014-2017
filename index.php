@@ -11,10 +11,11 @@
 		<title>Jake Siegers - Web Developer</title>
 		<meta name="description" content="&quot;Now avaiable in web 2.0!&quot;" />
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,100' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/mobile.css"/>
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/history.js/1.8/native.history.min.js"></script>
 
 		<!--Woah, that's a lot of icons! -->
 		<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
@@ -46,11 +47,11 @@
 		<div class="container js_head" id="js_head">
 				<div class="js_title"><?php echo $js_randomGreetings[array_rand($js_randomGreetings,1)] ?> I'm <span class="js_name">Jake Siegers</span></div>
 				<div class="js_desc">Web Application Developer, Programmer and Designer. Also Enjoys Cooking.</div>
-				<div class="js_desc"><a href="" class="js_menuLink" linkTo="js_contactBox">[ Email Me ]</a> <a href="" class="js_menuLink" linkTo="js_workBox">[ My Projects ]</a> <a href="https://github.com/JakeSiegers" class="js_menuLink" target="_blank">[ <i class="fa fa-github"></i> ]</a></div>
+				<div class="js_desc"><a href="#" class="js_menuLink" linkTo="js_contactBox">[ Email Me ]</a> <a href="#" class="js_menuLink" linkTo="js_workBox">[ My Projects ]</a> <a href="https://github.com/JakeSiegers" class="js_menuLink" target="_blank">[ <i class="fa fa-github"></i> ]</a></div>
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
+				<div class="col-sm-6 col-sm-offset-3">
 					<div class="js_content_wrap" id="js_content_wrap">
 
 					</div>
@@ -75,32 +76,10 @@
 			<div class="js_emailHappyMessage"></div>
 		</div>
 
-		<div class="js_contentData" id="js_workBox">
-			These are some of the projects I've worked on, or made in my free time:
-			<?php
-			require_once('portfolio.php');
-			foreach($portfolio as $row){
-				echo '<div class="js_portfolioTitle">'.$row['title'].'</div>';
-				echo '<div class="js_portfilioBoxFrame js_blur">';
-					echo '<div class="row">';
-						echo '<div class="col-xs-4">';
-							echo '<img src="'.$row['image'].'" class="img-responsive js_image" alt="Responsive image">';
-						echo '</div>';
-						echo '<div class="col-xs-8">';
-							echo '<div class="js_portfilioBox js_white">';
-								echo '<div class="js_portfolioDesc">'.$row['desc'].'<br /><a href="'.$row['url'].'" target="_blank">[ View Project ]</a>';
-								if(isset($row['github'])){
-									echo '<a href="'.$row['github'].'" target="_blank">[ <i class="fa fa-github"></i> ]</a>';
-								}
-								echo '</div>';
-							echo '</div>';
-						echo '</div>';
-					echo '</div>';
-				echo '</div>';
-			}
-			?>
-			Almost all of the professional projects I've worked on aren't public, so email me if you're interested in them. I'm more than happy to share what I'm allowed to.
-		</div>
+		<div class="js_contentData" id="js_workBox"></div>
+
+		<div class="js_contentData" id="js_workDetail"></div>
+
 		<script src="js/libraries/jquery-1.11.1.min.js"></script>
 		<script src="js/functions.js"></script>
 		<script src="js/visualizer.js"></script>

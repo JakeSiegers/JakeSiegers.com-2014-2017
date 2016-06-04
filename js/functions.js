@@ -4,6 +4,7 @@ var sendingEmail = false;
 
 $(function(){
 	js_adjustHeader();
+	js_loadPortfolio();
 	$('.js_menuLink').click(function(){
 		if($(this).attr('linkTo')){
 			js_changeBox($(this).attr('linkTo'));
@@ -13,6 +14,61 @@ $(function(){
 		}
 	});
 });
+
+
+var portfolioItems = {};
+
+function js_loadPortfolio(){
+	$.ajax({
+		url:'portfolio.php',
+		dataType:'json',
+		success:function(reply){
+			portfolioItems = reply
+			js_generatePortfolio();
+		},
+		error:function(){
+
+		},
+		context:this
+	});
+}
+
+function js_generatePortfolio(){
+	var html = '';
+	html += '<div class="row">';
+	for(var key in portfolioItems){
+		html += '<div class="col-xs-6">';
+		html += '<a href="#" class="js_menuLink" onclick="js_loadPortfolioDetail(\''+key+'\'); return false;">';
+		html += '<a href="'+portfolioItems[key].url+'" target="_blank" class="js_menuLink">';
+		html += '<div class="js_zoomImageBox">';
+		html += '<div class="js_zoomImageBoxImage" style="background-image:url('+portfolioItems[key].image+');"></div>';
+		html += '<div class="js_zoomImageBoxTextWrap"><div class="js_zoomImageBoxTextTable"><div class="js_zoomImageBoxText">'+portfolioItems[key].title+'</div></div></div>';
+		html += '</div>';
+		html += '</a>';
+		html += '</div>';
+	}
+	html += '</div>';
+	$("#js_workBox").html(html);
+}
+
+function js_loadPortfolioDetail(item){
+	var html = '';
+
+	html += '<a href="#" class="js_menuLink" onclick="js_changeBox(\'js_workBox\'); return false;"><- Go Back</a>'
+	html += '<div class="js_portfolioTitle">'+portfolioItems[item].title+'</div>';
+
+
+	html += '<div class="js_portfolioDesc">'+portfolioItems[item].desc+'</div>';
+	html += '<a class="js_portfolioLink" href="'+portfolioItems[item].url+'" target="_blank">[ Visit Project ]</a>';
+	html += '<div class="js_portfolioPhotos">';
+	for(var i in portfolioItems[item].screens) {
+		html += '<div><img src="' + portfolioItems[item].screens[i]+ '"/></div>';
+	}
+	html += '</div>';
+
+	$("#js_workDetail").html(html);
+	js_changeBox('js_workDetail');
+}
 
 function js_adjustHeader(){
 	var newMargin = 30;
@@ -50,6 +106,7 @@ function js_changeBox(box){
 		js_hideBox();
 		return false;
 	}
+
 	if(currentBox !== false){
 		$('#js_content_wrap').animate({
 			'opacity':'0'
@@ -84,11 +141,15 @@ function js_showBox(box){
 		return false;
 	}
 
-	$('#js_content_wrap').html('');
+	console.log(box);
+
+	var contentWrap = $('#js_content_wrap');
+
+	contentWrap.html('');
 	js_reCalcScreenHeight();
-	$('#js_content_wrap').html($('#'+box).html());
+	contentWrap.html($('#'+box).html());
 	js_adjustHeader();
-		$('#js_content_wrap').animate({
+	contentWrap.animate({
 		'opacity':'1'
 		,'margin-top':'30px'
 	},300);
