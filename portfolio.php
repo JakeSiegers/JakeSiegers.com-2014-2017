@@ -24,7 +24,7 @@
 		),
 		'NodeGame' => array(
 			'image' => 'img/portfolio/nodegame.jpg'
-			,'url' => 'http://aws.jakeisa.ninjas'
+			,'url' => 'http://aws.jakeisa.ninja'
 			,'title' => 'My Node JS Game'
 			,'desc' => 'My Un-named, Node.js Multplayer Game. Grab some friends, and try it out! Written in Javascript using Phaser.js and Socket.io'
 			,'screens' => array(
