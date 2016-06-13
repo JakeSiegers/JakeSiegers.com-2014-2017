@@ -28,7 +28,7 @@
 				));
 				return false;
 			}
-			$mailSuccess = mail('sirtopeia@yahoo.com','JakeSiegers.com Message',"From:{$f['name']} ({$f['email']})\r\nMessage:\r\n{$f['message']}");
+			$mailSuccess = mail('sirtopeia@yahoo.com','JakeSiegers.com Message',"From:{$f['name']} ({$f['email']})\r\nMessage:\r\n{$f['message']}","From: Jake's Mail Bot <mailBot@jakesiegers.com>\r\nReply-To: {$f['name']}<{$f['email']}>");
 			if(!$mailSuccess){
 				$this->json(array(
 					'success' => false
