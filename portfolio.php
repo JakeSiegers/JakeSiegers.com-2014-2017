@@ -3,7 +3,7 @@
 		'MG' => array(
 			'image' => 'img/portfolio/mg.jpg'
 			,'url' => 'http://McleodGaming.com'
-			,'title' => 'McleodGaming.com'
+			,'title' => 'McleodGaming'
 			,'desc' => "Mcleodgaming.com is a gaming website, and their flagship game, Super Smash Flash 2 (SSF2), is one of the most popular Smash Bros. fangames on the web. The site averages over 100 thousand views daily! In early 2016, I re-vamped and updated the current website, which hadn't been touched in eight years. This new site is now powered by wordpress, running a theme that I designed and programmed. The theme features mobile-responsive layout, with custom templates for many of the blog and gaming related pages on the site."
 			,'screens' => array(
 				'img/portfolio/mg/mg1.jpg',
@@ -14,7 +14,7 @@
 		'Alexandra' => array(
 			'image' => 'img/portfolio/alexandra.jpg'
 			,'url' => 'http://AlexandraConley.com'
-			,'title' => 'AlexandraConley.com'
+			,'title' => 'Alexandra Conley'
 			,'desc' => 'This is portfolio site for the artist, Alexandra Conley. It features a custom Wordpress theme that was coded using Photoshop designs made by Alexandra. The theme has special back-end editors to make all the portfolio and gallery pages easy to edit, with no coding knowledge needed from the client.'
 			,'screens' => array(
 				'img/portfolio/mg/mg1.jpg',
@@ -48,7 +48,7 @@
 		'BBQK' => array(
 			'image' => 'img/portfolio/kitten.jpg'
 			,'url' => 'http://bbqkittenimprov.com/'
-			,'title' => 'Barbeque Kitten Improv - Website'
+			,'title' => 'Barbeque Kitten Improv'
 			,'desc' => 'I designed and programmed the website for my college improv troupe. It shows off our members, and our upcoming shows.'
 			,'screens' => array(
 				'img/portfolio/mg/mg1.jpg',

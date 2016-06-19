@@ -1,8 +1,3 @@
-<?php
-	$js_randomGreetings = array("Hello World,","Sup Kiddos,","Ohai,")
-
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,7 +7,7 @@
 		<meta name="description" content="&quot;Now avaiable in web 2.0!&quot;" />
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,100' rel='stylesheet' type='text/css'>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css/style.css" async/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/mobile.css"/>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/history.js/1.8/native.history.min.js"></script>
@@ -45,7 +40,7 @@
 	<body>
 		<canvas class="js_backgroundCanvas" id="js_backgroundCanvas" width="1280" height="720" ></canvas>
 		<div class="container js_head" id="js_head">
-				<div class="js_title"><?php echo $js_randomGreetings[array_rand($js_randomGreetings,1)] ?> I'm <span class="js_name">Jake Siegers</span></div>
+				<div class="js_title">&lt; <span class="js_name">Jake Siegers</span> /&gt;</div>
 				<div class="js_desc">Web Application Developer, Programmer and Designer. Also Enjoys Cooking.</div>
 				<div class="js_desc"><a href="#" class="js_menuLink" linkTo="js_contactBox">[ Email Me ]</a> <a href="#" class="js_menuLink" linkTo="js_workBox">[ My Projects ]</a> <a href="https://github.com/JakeSiegers" class="js_menuLink" target="_blank">[ <i class="fa fa-github"></i> ]</a></div>
 		</div>
